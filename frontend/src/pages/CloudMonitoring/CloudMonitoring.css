@@ -1,0 +1,454 @@
+/* ========================================
+   CLOUD MONITORING — MAIN PAGE
+======================================== */
+
+.cloud-monitoring {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+  color: #f4f7fb;
+  background: #0b1120;
+  min-height: 100vh;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.cloud-monitoring *,
+.cloud-monitoring *::before,
+.cloud-monitoring *::after {
+  box-sizing: border-box;
+}
+
+.cloud-monitoring h1,
+.cloud-monitoring h2,
+.cloud-monitoring h3,
+.cloud-monitoring p {
+  margin-top: 0;
+}
+
+.cloud-monitoring h1 {
+  margin-bottom: 10px;
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.2;
+  font-weight: 750;
+  color: #f8fafc;
+}
+
+.cloud-monitoring h2 {
+  margin-bottom: 0;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.cloud-monitoring p {
+  color: #aab7ca;
+  line-height: 1.6;
+}
+
+/* ========================================
+   PAGE HEADER
+======================================== */
+
+.cloud-monitoring .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.cloud-monitoring .page-header p {
+  margin-bottom: 0;
+  max-width: 700px;
+  font-size: 14px;
+}
+
+.simulation-indicator {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: #111c30;
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ========================================
+   CLOUD PROVIDER CARDS
+======================================== */
+
+.cloud-monitoring .cloud-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+  margin-bottom: 30px;
+}
+
+.cloud-monitoring .cloud-panel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid #26354b;
+  border-top: 3px solid #64748b;
+  border-radius: 15px;
+  background: #111a2b;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cloud-monitoring .cloud-panel.aws {
+  border-top-color: #f59e0b;
+}
+
+.cloud-monitoring .cloud-panel.azure {
+  border-top-color: #00a4ef;
+}
+
+.cloud-monitoring .cloud-panel.gcp {
+  border-top-color: #34d399;
+}
+
+.cloud-monitoring .cloud-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cloud-monitoring .cloud-title h2 {
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   CONNECTION STATUS
+======================================== */
+
+.cloud-monitoring .status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cloud-monitoring .status.connected {
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.cloud-monitoring .status.simulated {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+/* ========================================
+   CLOUD CARD INFORMATION
+======================================== */
+
+.cloud-monitoring .cloud-info {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.cloud-monitoring .cloud-info p {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.cloud-monitoring .cloud-info strong {
+  color: #f1f5f9;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.cloud-monitoring .cloud-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 40px;
+  margin-top: 8px;
+  padding: 10px 16px;
+  border: 1px solid #315de0;
+  border-radius: 8px;
+  background: #244cce;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.cloud-monitoring .cloud-button:hover {
+  background: #3263e8;
+  border-color: #4f79f0;
+}
+
+.cloud-monitoring .cloud-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   ACTIVITY AND FINDINGS SECTIONS
+======================================== */
+
+.cloud-monitoring .aws-events-section {
+  min-width: 0;
+  margin-bottom: 26px;
+  padding: 24px;
+  border: 1px solid #26354b;
+  border-radius: 15px;
+  background: #111a2b;
+}
+
+.cloud-monitoring .aws-events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cloud-monitoring .aws-events-header > div {
+  min-width: 0;
+}
+
+.cloud-monitoring .aws-events-header p {
+  margin: 7px 0 0;
+  font-size: 13px;
+}
+
+.cloud-monitoring .aws-events-header .cloud-button {
+  margin-top: 0;
+}
+
+.cloud-monitoring .aws-events-error {
+  color: #fca5a5;
+}
+
+/* ========================================
+   TABLES
+======================================== */
+
+.cloud-monitoring .aws-events-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #26354b;
+  border-radius: 10px;
+}
+
+.cloud-monitoring .aws-events-table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  background: #0d1626;
+  text-align: left;
+}
+
+.cloud-monitoring .aws-events-table th {
+  padding: 15px 16px;
+  background: #162237;
+  color: #aab7ca;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  border-bottom: 1px solid #2a3950;
+}
+
+.cloud-monitoring .aws-events-table td {
+  padding: 15px 16px;
+  color: #dce5f2;
+  font-size: 13px;
+  line-height: 1.5;
+  border-bottom: 1px solid #202d40;
+  overflow-wrap: anywhere;
+  vertical-align: top;
+}
+
+.cloud-monitoring .aws-events-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cloud-monitoring .aws-events-table tbody tr:hover {
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.cloud-monitoring .aws-events-table td strong {
+  color: #f1f5f9;
+}
+
+/* ========================================
+   GENERAL INFORMATION NOTES
+======================================== */
+
+.cloud-monitoring .cloud-note {
+  margin: 16px 0;
+  padding: 16px 18px;
+  border: 1px solid #30425c;
+  border-radius: 10px;
+  background: #111c30;
+  color: #dce5f2;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.cloud-monitoring .cloud-note strong {
+  color: #f8fafc;
+}
+
+.cloud-monitoring .cloud-note p {
+  margin: 6px 0 0;
+  font-size: 13px;
+}
+
+/* ========================================
+   AZURE ACTIVITY SECTION
+======================================== */
+
+.cloud-monitoring .azure-events-section {
+  border-top: 3px solid #00a4ef;
+}
+
+.cloud-monitoring .azure-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.cloud-monitoring .azure-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(0, 164, 239, 0.25);
+  border-radius: 12px;
+  background: rgba(0, 164, 239, 0.06);
+}
+
+.cloud-monitoring .azure-metric span {
+  color: #aab7ca;
+  font-size: 13px;
+}
+
+.cloud-monitoring .azure-metric strong {
+  color: #f4f7fb;
+  font-size: 26px;
+}
+
+.cloud-monitoring .azure-event-id {
+  display: block;
+  margin-top: 5px;
+  color: #8b9bb1;
+  font-size: 11px;
+}
+
+.cloud-monitoring .severity-label {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cloud-monitoring .severity-high {
+  color: #ff9b9b;
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.cloud-monitoring .severity-medium {
+  color: #ffd17d;
+  background: rgba(245, 158, 11, 0.13);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.cloud-monitoring .severity-normal {
+  color: #82e6b1;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.28);
+}
+
+.cloud-monitoring .azure-demo-footer {
+  margin-top: 14px;
+}
+
+/* ========================================
+   RESPONSIVE LAYOUT
+======================================== */
+
+@media (max-width: 1100px) {
+  .cloud-monitoring .cloud-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .cloud-monitoring {
+    padding: 18px;
+  }
+
+  .cloud-monitoring .cloud-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cloud-monitoring .cloud-panel,
+  .cloud-monitoring .aws-events-section {
+    padding: 18px;
+  }
+
+  .cloud-monitoring .azure-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .cloud-monitoring .page-header {
+    align-items: flex-start;
+  }
+
+  .cloud-monitoring .aws-events-header {
+    align-items: flex-start;
+  }
+
+  .cloud-monitoring .simulation-indicator {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,21 @@
+.cloud-card{
+background:#111827;
+padding:25px;
+border-radius:15px;
+width:220px;
+transition:0.3s;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+.cloud-card:hover{
+transform:translateY(-5px);
+}
+
+.cloud-card h3{
+margin-bottom:15px;
+}
+
+.status{
+font-size:18px;
+font-weight:bold;
+}
